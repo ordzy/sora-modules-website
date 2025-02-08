@@ -20,7 +20,7 @@
         <!-- Redirect View -->
         <div id="redirectContent" class="redirect-container">
             <div class="loading"></div>
-            <p>Opening in Sora app...</p>
+            <p>Opening in Sora...</p>
             <div class="link-display" id="linkDisplay"></div>
             <button class="button" onclick="copyLink()">Copy Link</button>
             <a href="/" class="button">Back to Home</a>
@@ -85,6 +85,12 @@
 
         // Function to handle redirect
         function handleRedirect(redirectUrl, baseUrl) {
+            // Update the URL without reloading the page
+            const websiteId = Object.entries(websites).find(([_, site]) => site.baseUrl === baseUrl)?.[0];
+            if (websiteId) {
+                window.history.pushState({}, '', `/module/${websiteId}`);
+            }
+
             // Show redirect content and hide homepage
             document.getElementById('homepage').style.display = 'none';
             document.getElementById('redirectContent').style.display = 'block';
@@ -114,15 +120,18 @@
             });
         }
 
+        // Check if we're on a module path
+        const path = window.location.pathname;
+        const match = path.match(/\/module\/([^/]+)/);
+        if (match) {
+            const websiteId = match[1];
+            if (websites[websiteId]) {
+                handleRedirect(websites[websiteId].redirectUrl, websites[websiteId].baseUrl);
+            }
+        }
+
         // Initialize website cards when the page loads
         document.addEventListener('DOMContentLoaded', createWebsiteCards);
-
-        // Check if we're on a direct website URL
-        const path = window.location.pathname;
-        const websiteId = path.split('/').pop().replace('.json', '');
-        if (websites[websiteId]) {
-            handleRedirect(websites[websiteId].redirectUrl, websites[websiteId].baseUrl);
-        }
     </script>
 </body>
 </html> 
