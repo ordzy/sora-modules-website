@@ -23,7 +23,7 @@
             <p>Opening in Sora...</p>
             <div class="link-display" id="linkDisplay"></div>
             <button class="button" onclick="copyLink()">Copy Link</button>
-            <a href="/" class="button">Back to Home</a>
+            <button onclick="showHomepage()" class="button">Back to Home</button>
             <p class="success-message" id="successMessage">Link copied successfully!</p>
         </div>
     </div>
@@ -88,12 +88,10 @@
             // Update the URL without reloading the page
             const websiteId = Object.entries(websites).find(([_, site]) => site.baseUrl === baseUrl)?.[0];
             if (websiteId) {
-                window.history.pushState({}, '', `/module/${websiteId}`);
+                window.history.pushState({ module: true }, '', `/${websiteId}`);
             }
 
-            // Show redirect content and hide homepage
-            document.getElementById('homepage').style.display = 'none';
-            document.getElementById('redirectContent').style.display = 'block';
+            showRedirectView();
             
             // Set the link display
             const linkDisplay = document.getElementById('linkDisplay');
@@ -107,6 +105,28 @@
                 linkDisplay.style.display = 'block';
             }, 1500);
         }
+
+        // Function to show redirect view
+        function showRedirectView() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('redirectContent').style.display = 'block';
+        }
+
+        // Function to show homepage
+        function showHomepage() {
+            document.getElementById('homepage').style.display = 'block';
+            document.getElementById('redirectContent').style.display = 'none';
+            window.history.pushState({ module: false }, '', '/');
+        }
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', (event) => {
+            if (event.state?.module) {
+                showRedirectView();
+            } else {
+                showHomepage();
+            }
+        });
 
         // Function to copy link
         function copyLink() {
@@ -122,12 +142,9 @@
 
         // Check if we're on a module path
         const path = window.location.pathname;
-        const match = path.match(/\/module\/([^/]+)/);
-        if (match) {
-            const websiteId = match[1];
-            if (websites[websiteId]) {
-                handleRedirect(websites[websiteId].redirectUrl, websites[websiteId].baseUrl);
-            }
+        const websiteId = path.slice(1); // Remove leading slash
+        if (websiteId && websites[websiteId]) {
+            handleRedirect(websites[websiteId].redirectUrl, websites[websiteId].baseUrl);
         }
 
         // Initialize website cards when the page loads
