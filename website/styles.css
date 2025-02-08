@@ -146,4 +146,31 @@ p {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+.github-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(30, 32, 40, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.github-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.github-link svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
 } 
