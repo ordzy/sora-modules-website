@@ -35,13 +35,13 @@ body {
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #ff6b6b);
-    background-size: 300% 100%;
-    animation: gradientSlide 3s linear infinite;
+    background-size: 200% 100%;
+    animation: gradientSlide 3s ease infinite;
 }
 
 @keyframes gradientSlide {
-    0% { background-position: 100% 0%; }
-    100% { background-position: 0% 0%; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 h1 {
