@@ -2,5 +2,5 @@
     "name": "Website Name",
     "baseUrl": "https://example.com",
     "redirectUrl": "sora://module?url=https://example.com/json",
-    "description": "Brief description of the website or language"
+    "description": "Language:<br>Sub/Dub"
 } 
