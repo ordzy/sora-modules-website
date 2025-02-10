@@ -1,6 +1,0 @@
-{
-    "name": "Website Name",
-    "baseUrl": "https://example.com",
-    "redirectUrl": "sora://module?url=https://example.com/json",
-    "description": "Language:<br>Sub/Dub"
-} 
