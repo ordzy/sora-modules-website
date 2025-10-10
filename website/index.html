@@ -38,131 +38,19 @@
     <script>
         // Website configurations
         const websites = {
-            'hianime': {
-                name: 'HiAnime',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianime/hianime.json',
-                description: 'Language: English<br>Dub'
+            'jormungandr': {
+                name: 'Jormungandr',
+                baseUrl: 'https://jormungandr.ofchaos.com/releases/sora/live/Jorm.json',
+                redirectUrl: 'sora://module?url=https://jormungandr.ofchaos.com/releases/sora/live/Jorm.json',
+                description: 'Language: English/Japanese<br>Dub/Sub'
             },
-            'hianimesubs': {
-                name: 'HiAnime Subs',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeSUBS/hianimeSUBS.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeSUBS/hianimeSUBS.json',
-                description: 'Language: Japanese<br>English Subtitles'
-            },
-            'aniwatch': {
-                name: 'Aniwatch',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatch/aniwatch.json',
-                description: 'Language: English<br>Dub'
-            },
-            'aniwatchsubs': {
-                name: 'Aniwatch Subs',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchSUBS/aniwatchSUBS.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchSUBS/aniwatchSUBS.json',
-                description: 'Language: Japanese<br>English Subtitles'
-            },
-            'animeheaven': {
-                name: 'AnimeHeaven',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeheaven/animeheaven.json',
-                description: 'Language: Japanese<br>English Subtitles'
-            },
-            'animeunity': {
-                name: 'AnimeUnity',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeunity/animeuntiy.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeunity/animeuntiy.json',
-                description: 'Language: Italian<br>Sub/Dub'
-            },
-            'animeworld': {
-                name: 'AnimeWorld',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeworld/animeworld.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animeworld/animeworld.json',
-                description: 'Language: Italian<br>Sub/Dub'
-            },
-            'anilibria': {
-                name: 'AniLibria',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anilibria/anilibria.json',
-                description: 'Language: Russian <br>Dub'
-            },
-            'anime3rb': {
-                name: 'Anime3rb',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/anime3rb/anime3rb.json',
-                description: 'Language: Arabic <br>Sub'
-            },
-            'animebalkan': {
-                name: 'AnimeBalkan',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animebalkan/animebalkan.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animebalkan/animebalkan.json',
-                description: 'Language: Croatian <br>Sub'
-            },
-            'animesrbija': {
-                name: "AnimeSRBIJA",
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/animesrbija/animesrbija.json',
-                description: 'Language: Serbian <br>Sub'
-            }, 
-            'hianimeraw': {
-                name: 'HiAnime RAW',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/hianimeRAW/hianimeRAW.json',
-                description: 'Language: Japanese'
-            },
-            'aniwatchraw': {
-                name: 'AniWatch RAW',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchRAW/aniwatchRAW.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniwatchRAW/aniwatchRAW.json',
-                description: 'Language: Japanese'
-            },
-            'animeflv': {
-                name: 'AnimeFLV',
-                baseUrl: 'https://raw.githubusercontent.com/jcpicco/sora-modules/refs/heads/main/animeflv/animeflv.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/jcpicco/sora-modules/refs/heads/main/animeflv/animeflv.json',
-                description: 'Language: Spanish <br>Sub'
-            },
-            'aniworld': {
-                name: 'AniWorld',
-                baseUrl: 'ttps://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerDub.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerDub.json',
-                description: 'Language: German <br>Dub'
-            },
-            'aniworldgersub': {
-                name: 'AniWorld Subs',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerSub.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldGerSub.json',
-                description: 'Language: German <br>Sub'
-            },
-            'aniworldengsub': {
-                name: 'AniWorld Subs',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldEngSub.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/aniworld/AniWorldEngSub.json',
-                description: 'Language: English <br>Sub'
-            },
-            'ableflix': {
-                name: 'AbleFlix (Movies)',
-                baseUrl: 'https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/ableflix/ableflix.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/ableflix/ableflix.json',
-                description: 'Non-Anime Movies'
-            },
-            'hopcorn': {
-                name: 'HopCorn+ (Movies)',
-                baseUrl: 'https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/hopcorn/hopcorn.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/hopcorn/hopcorn.json',
-                description: 'Non-Anime* Movies'
-            },
-            'bingeflex': {
-                name: 'Bingeflex (Movies)',
-                baseUrl: 'https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/bingeflex/bingeflex.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/xibrox/sora-movie-module/refs/heads/main/bingeflex/bingeflex.json',
-                description: 'Non-Anime* Movies/TV'
-            },'sdotto': {
-                name: 'S.TO (TV series)',
-                baseUrl: 'https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/sToGerDub.json',
-                redirectUrl: 'sora://module?url=https://raw.githubusercontent.com/50n50/sources/refs/heads/main/s.to/sToGerDub.json',
-                description: 'Non-Anime* TV (German)'
-            },
+//            'name': {
+//                name: '',
+//                baseUrl: '',
+//                redirectUrl: 'sora://module?url=',
+//                description: 'Language: <br>'
+//            },
+
             // Add more websites here
         };
 
